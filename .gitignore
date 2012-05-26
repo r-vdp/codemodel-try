@@ -1,4 +1,6 @@
 src/uz/s9/generated
+.idea
+*.iml
 
 *.class
 
