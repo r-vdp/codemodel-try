@@ -9,7 +9,6 @@ import com.sun.codemodel.internal.JMethod;
 import com.sun.codemodel.internal.JPackage;
 import com.sun.codemodel.internal.JPrimitiveType;
 import com.sun.codemodel.internal.JVar;
-import uz.s9.pm.existing.AbstractEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -34,10 +33,6 @@ import static uz.s9.pm.generation.tools.GenerationTools.createSubPackage;
  *         Time: 12:31
  */
 public class EntityGeneratorImpl implements EntityGenerator {
-
-    public static final Class<AbstractEntity> SUPER_ENTITY = AbstractEntity.class;
-    public static final String ENTITY_IFACE_SUFFIX = "Entity";
-    public static final String ENTITY_SUFFIX = ENTITY_IFACE_SUFFIX + "DB";
 
     private final JCodeModel codeModel;
 
@@ -72,7 +67,7 @@ public class EntityGeneratorImpl implements EntityGenerator {
                                           final String name)
             throws JClassAlreadyExistsException {
         final JDefinedClass iface = pkg._interface(cap(name) + ENTITY_IFACE_SUFFIX);
-        iface._extends(codeModel.ref(SUPER_ENTITY).narrow(iface));
+        iface._extends(codeModel.ref(ABSTR_ENTITY).narrow(iface));
         return iface;
     }
 

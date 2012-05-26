@@ -10,8 +10,6 @@ import com.sun.codemodel.internal.JMethod;
 import com.sun.codemodel.internal.JPackage;
 import com.sun.codemodel.internal.JType;
 import com.sun.codemodel.internal.JVar;
-import uz.s9.pm.existing.AbstractModel;
-import uz.s9.pm.existing.ModelFactory;
 import uz.s9.pm.generation.tools.GenerationType;
 
 import static com.sun.codemodel.internal.JExpr.invoke;
@@ -29,11 +27,6 @@ import static uz.s9.pm.generation.tools.GenerationTools.createSubPackage;
  */
 public class ModelGeneratorImpl implements ModelGenerator {
 
-    public static final Class<AbstractModel> SUPER_MODEL = AbstractModel.class;
-    public static final Class<ModelFactory> MODEL_FACTORY = ModelFactory.class;
-    public static final String CLASS_SUFFIX = "Model";
-    public static final String FACTORY_SUFFIX = "Factory";
-
     private final JCodeModel codeModel;
     private final JDefinedClass iface;
     private final JDefinedClass clazz;
@@ -44,7 +37,7 @@ public class ModelGeneratorImpl implements ModelGenerator {
         this.codeModel = codeModel;
         domainPkg = createDomainPkg(config);
         iface = domainPkg._interface(cap(config.name()));
-        clazz = domainPkg._class(cap(config.name()) + CLASS_SUFFIX);
+        clazz = domainPkg._class(cap(config.name()) + MODEL_SUFFIX);
     }
 
     private JPackage createDomainPkg(final Config config) {
@@ -54,7 +47,7 @@ public class ModelGeneratorImpl implements ModelGenerator {
     @Override
     public void init(final JClass entityType) throws Exception {
         clazz._implements(iface);
-        clazz._extends(codeModel.ref(SUPER_MODEL).narrow(entityType));
+        clazz._extends(codeModel.ref(ABSTR_MODEL).narrow(entityType));
 
         createConstructor(entityType);
         createFactory(domainPkg, entityType);
@@ -70,7 +63,7 @@ public class ModelGeneratorImpl implements ModelGenerator {
                                final JClass entityType) throws Exception {
         final JMethod create = pkg._class(clazz.name() + FACTORY_SUFFIX)
                 ._implements(
-                        codeModel.ref(MODEL_FACTORY).narrow(entityType, clazz))
+                        codeModel.ref(ABSTR_MODEL_FACTORY).narrow(entityType, clazz))
                 .method(PUBLIC, clazz, "create");
         create.annotate(Override.class);
         final JVar entity = create.param(FINAL, entityType, "entity");
