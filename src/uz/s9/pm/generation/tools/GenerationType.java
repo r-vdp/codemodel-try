@@ -1,6 +1,6 @@
 package uz.s9.pm.generation.tools;
 
-import com.sun.codemodel.JClass;
+import com.sun.codemodel.internal.JClass;
 
 /**
  * @author Ramses de Norre

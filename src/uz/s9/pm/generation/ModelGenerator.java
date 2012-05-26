@@ -1,7 +1,7 @@
 package uz.s9.pm.generation;
 
-import com.sun.codemodel.JClass;
-import com.sun.codemodel.JMethod;
+import com.sun.codemodel.internal.JClass;
+import com.sun.codemodel.internal.JMethod;
 
 /**
  * @author Ramses de Norre

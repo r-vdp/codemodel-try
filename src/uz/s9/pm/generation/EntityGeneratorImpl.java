@@ -1,14 +1,14 @@
 package uz.s9.pm.generation;
 
-import com.sun.codemodel.ClassType;
-import com.sun.codemodel.JClassAlreadyExistsException;
-import com.sun.codemodel.JCodeModel;
-import com.sun.codemodel.JDefinedClass;
-import com.sun.codemodel.JFieldVar;
-import com.sun.codemodel.JMethod;
-import com.sun.codemodel.JPackage;
-import com.sun.codemodel.JPrimitiveType;
-import com.sun.codemodel.JVar;
+import com.sun.codemodel.internal.ClassType;
+import com.sun.codemodel.internal.JClassAlreadyExistsException;
+import com.sun.codemodel.internal.JCodeModel;
+import com.sun.codemodel.internal.JDefinedClass;
+import com.sun.codemodel.internal.JFieldVar;
+import com.sun.codemodel.internal.JMethod;
+import com.sun.codemodel.internal.JPackage;
+import com.sun.codemodel.internal.JPrimitiveType;
+import com.sun.codemodel.internal.JVar;
 import uz.s9.pm.existing.AbstractEntity;
 
 import javax.persistence.Column;
@@ -20,11 +20,11 @@ import javax.persistence.TableGenerator;
 import javax.persistence.Version;
 import java.util.Map;
 
-import static com.sun.codemodel.JExpr._this;
-import static com.sun.codemodel.JMod.FINAL;
-import static com.sun.codemodel.JMod.NONE;
-import static com.sun.codemodel.JMod.PRIVATE;
-import static com.sun.codemodel.JMod.PUBLIC;
+import static com.sun.codemodel.internal.JExpr._this;
+import static com.sun.codemodel.internal.JMod.FINAL;
+import static com.sun.codemodel.internal.JMod.NONE;
+import static com.sun.codemodel.internal.JMod.PRIVATE;
+import static com.sun.codemodel.internal.JMod.PUBLIC;
 import static uz.s9.pm.generation.tools.GenerationTools.cap;
 import static uz.s9.pm.generation.tools.GenerationTools.createSubPackage;
 

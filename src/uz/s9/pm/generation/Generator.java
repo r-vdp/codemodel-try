@@ -1,6 +1,7 @@
 package uz.s9.pm.generation;
 
-import com.sun.codemodel.JCodeModel;
+
+import com.sun.codemodel.internal.JCodeModel;
 
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;

@@ -1,8 +1,8 @@
 package uz.s9.pm.generation.tools;
 
-import com.sun.codemodel.JClass;
-import com.sun.codemodel.JCodeModel;
-import com.sun.codemodel.JPackage;
+import com.sun.codemodel.internal.JClass;
+import com.sun.codemodel.internal.JCodeModel;
+import com.sun.codemodel.internal.JPackage;
 
 import java.lang.reflect.Method;
 import java.util.List;

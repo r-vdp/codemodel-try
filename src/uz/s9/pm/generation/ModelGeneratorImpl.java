@@ -1,24 +1,24 @@
 package uz.s9.pm.generation;
 
-import com.sun.codemodel.JBlock;
-import com.sun.codemodel.JClass;
-import com.sun.codemodel.JCodeModel;
-import com.sun.codemodel.JDefinedClass;
-import com.sun.codemodel.JExpr;
-import com.sun.codemodel.JFieldVar;
-import com.sun.codemodel.JMethod;
-import com.sun.codemodel.JPackage;
-import com.sun.codemodel.JType;
-import com.sun.codemodel.JVar;
+import com.sun.codemodel.internal.JBlock;
+import com.sun.codemodel.internal.JClass;
+import com.sun.codemodel.internal.JCodeModel;
+import com.sun.codemodel.internal.JDefinedClass;
+import com.sun.codemodel.internal.JExpr;
+import com.sun.codemodel.internal.JFieldVar;
+import com.sun.codemodel.internal.JMethod;
+import com.sun.codemodel.internal.JPackage;
+import com.sun.codemodel.internal.JType;
+import com.sun.codemodel.internal.JVar;
 import uz.s9.pm.existing.AbstractModel;
 import uz.s9.pm.existing.ModelFactory;
 import uz.s9.pm.generation.tools.GenerationType;
 
-import static com.sun.codemodel.JExpr.invoke;
-import static com.sun.codemodel.JMod.FINAL;
-import static com.sun.codemodel.JMod.NONE;
-import static com.sun.codemodel.JMod.PUBLIC;
-import static com.sun.codemodel.JMod.STATIC;
+import static com.sun.codemodel.internal.JExpr.invoke;
+import static com.sun.codemodel.internal.JMod.FINAL;
+import static com.sun.codemodel.internal.JMod.NONE;
+import static com.sun.codemodel.internal.JMod.PUBLIC;
+import static com.sun.codemodel.internal.JMod.STATIC;
 import static uz.s9.pm.generation.tools.GenerationTools.cap;
 import static uz.s9.pm.generation.tools.GenerationTools.createSubPackage;
 
