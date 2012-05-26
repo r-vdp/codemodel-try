@@ -8,7 +8,7 @@ import uz.s9.pm.generation.tools.GenerationType;
  *         Date: 25/05/12
  *         Time: 15:09
  */
-public abstract class AbstractModel<E extends AbstractEntity>
+public abstract class AbstractModel<E extends AbstractEntity<E>>
         extends Model {
 
     private E entity;
