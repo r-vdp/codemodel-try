@@ -110,7 +110,7 @@ public class ModelGeneratorImpl implements ModelGenerator {
                 clazz.method(PUBLIC, codeModel.VOID, entitySetter.name());
         assert entitySetter.listParams().length == 1;
         final JVar entityParam = entitySetter.listParams()[0];
-        final JVar param = setter.param(entityParam.type(), entityParam.name());
+        final JVar param = setter.param(FINAL, entityParam.type(), entityParam.name());
         final JBlock body = setter.body();
 
         final JVar old = body.decl(FINAL, param.type(), "old", invoke(getter));
